@@ -10,20 +10,21 @@ class TasksServices {
         } catch (error) {
             throw error;
         }
-    }/*
+    }
     static async taskAndCategory(tasksId) {
         try {
             const result = await Tasks.findByPk(tasksId,
                 {
                     include: {
-                        model: Categorie
+                        model: Categorie,
+                        attributes: ["name"],
                     }
                 });
-                return result;
+            return result;
         } catch (error) {
             throw error;
         }
-    }*/
+    }
     static async UpdateTask(idTask) {
         try {
             const taskUpdate = await Tasks.update(idTask);

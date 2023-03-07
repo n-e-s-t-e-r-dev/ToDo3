@@ -1,4 +1,4 @@
-const Categorie = require('../models/categories.models');
+
 const Users = require('../models/users.models');
 
 class UsersServices {
@@ -18,19 +18,7 @@ class UsersServices {
             throw error;
         }
     }
-    static async taskAndCategory(tasksId) {
-        try {
-            const result = await Users.findByPk(tasksId,
-                {
-                    include: {
-                        model: Categorie
-                    }
-                });
-                return result;
-        } catch (error) {
-            throw error;
-        }
-    }
+
 
 }
 

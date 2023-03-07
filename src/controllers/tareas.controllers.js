@@ -44,8 +44,20 @@ const TasksDelete = async (req, res) => {
     }
 }
 
+const getAlltaskAndCategory = async (req,res) => {
+    try {
+        const {tasksId} = req.params;
+        console.log(tasksId)
+        const taskAndCategorys = await TasksServices.taskAndCategory(tasksId)
+        res.json(taskAndCategorys);
+    } catch (error) {
+        res.status(400).json(error);
+    }
+}
+
 module.exports = {
     CreateTasks,
     TasksUpdate,
-    TasksDelete
+    TasksDelete,
+    getAlltaskAndCategory
 }

@@ -20,17 +20,8 @@ const getAllUsers = async (req,res) => {
     }
 }
 
-const getAlltaskAndCategory = async (req,res) => {
-    try {
-        const {tasksId} = req.params;
-        const taskAndCategorys = await UsersServices.taskAndCategory(tasksId)
-        res.json(taskAndCategorys);
-    } catch (error) {
-        res.status(400).json(error);
-    }
-}
+
 module.exports = {
     CreateUsers,
     getAllUsers,
-    getAlltaskAndCategory
 }

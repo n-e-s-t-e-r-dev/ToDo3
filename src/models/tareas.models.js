@@ -22,7 +22,7 @@ const Tareas = db.define('tareas',{
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    category: {
+    category_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
